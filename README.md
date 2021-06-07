@@ -11,4 +11,4 @@ python app.py
 
 ## Implementation
 
-This project is implemented using Flask, and is REST API for a store`.
+This project is implemented using Flask, and is REST API for a store.
