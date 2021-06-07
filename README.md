@@ -1,4 +1,4 @@
-# Udemy REST AIP course
+# Udemy REST API course
 
 ## Installation
 
