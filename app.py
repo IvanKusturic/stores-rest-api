@@ -19,13 +19,13 @@ from db import db
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['PROPAGATE_EXCEPTIONS'] = True # this has to be used in order to receive "Request does not contain an access token"
+app.config['PROPAGATE_EXCEPTIONS'] = True # This has to be used in order to receive "Request does not contain an access token"
 app.secret_key = 'dragana'
 api = Api(app)
 
 @app.before_first_request
 def create_tables():
-    db.create_all()    
+    db.create_all()
 
 jwt = JWT(app, authenticate, identity) # /auth
 
