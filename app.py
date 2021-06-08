@@ -5,8 +5,6 @@ Created on Mon May 17 12:51:31 2021
 @author: Admin
 """
 
-# comment for checking git
-
 from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT
