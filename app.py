@@ -23,10 +23,6 @@ app.config['PROPAGATE_EXCEPTIONS'] = True # This has to be used in order to rece
 app.secret_key = 'dragana'
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 jwt = JWT(app, authenticate, identity) # /auth
 
 api.add_resource(Store, '/store/<string:name>')
@@ -37,5 +33,6 @@ api.add_resource(ItemList, '/items')
 api.add_resource(UserRegister, '/register')
 
 if __name__ == '__main__':
+    from db import db
     db.init_app(app)
     app.run(port=5000)  # important to mention debug=True. 5000 is the default port - can be omitted
